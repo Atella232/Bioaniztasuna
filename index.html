@@ -1177,6 +1177,24 @@ body {
   line-height: 1.6;
 }
 
+.timeline-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-portrait {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  background: rgba(255,255,255,0.05); /* Placeholder background */
+  flex-shrink: 0;
+}
+
+
 /* ===== FOOTER ===== */
 .footer {
   text-align: center;
@@ -1701,40 +1719,65 @@ body {
   <div class="timeline reveal">
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">K.a. IV. mendea</div>
-        <h4>Aristoteles — 2 Erreinu</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_aristoteles.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">K.a. IV. mendea</div>
+            <h4>Aristoteles — 2 Erreinu</h4>
+          </div>
+        </div>
         <p>Filosofo greziarrak izaki bizidunak bi taldetan banatu zituen: "arima begetatiboak" (landareak) eta "arima sentikorrak" (animaliak).</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1735</div>
-        <h4>Carlos Linneo — 2 Erreinu</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_linneo.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1735</div>
+            <h4>Carlos Linneo — 2 Erreinu</h4>
+          </div>
+        </div>
         <p>Naturalista suediarrak Aristotelesen ideiari jarraituz, Planta eta Animalia erreinuak formalizatu zituen.</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1858-1865</div>
-        <h4>Owen & Haeckel — 3 Erreinu</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_haeckel.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1858-1865</div>
+            <h4>Owen & Haeckel — 3 Erreinu</h4>
+          </div>
+        </div>
         <p>Richard Owen-ek Protista erreinua proposatu zuen. Haeckelek lehen aldiz bereizi zituen organismo zelulabakarrak eta zelulanitzak.</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1938</div>
-        <h4>Copeland — 4 Erreinu</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_copeland.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1938</div>
+            <h4>Copeland — 4 Erreinu</h4>
+          </div>
+        </div>
         <p>Herbert Copelandek prokarioto/eukarioto bereizketa txertatu zuen, Monera erreinua gehituz (nukleorik gabeko bakterioak).</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1969</div>
-        <h4>Whittaker — 5 Erreinu</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_whittaker.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1969</div>
+            <h4>Whittaker — 5 Erreinu</h4>
+          </div>
+        </div>
         <p>Robert Whittakerrek onddoak (Fungi) landare eta animalietatik guztiz bereizi zituen: Moneroak, Protozooak, Plantae, Fungi, Animalia.</p>
       </div>
       <div class="timeline-dot"></div>

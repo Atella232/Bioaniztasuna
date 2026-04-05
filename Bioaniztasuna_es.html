@@ -1177,6 +1177,24 @@ body {
   line-height: 1.6;
 }
 
+.timeline-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-portrait {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  background: rgba(255,255,255,0.05); /* Placeholder background */
+  flex-shrink: 0;
+}
+
+
 /* ===== FOOTER ===== */
 .footer {
   text-align: center;
@@ -1701,40 +1719,65 @@ body {
   <div class="timeline reveal">
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">Siglo IV a.C.</div>
-        <h4>Aristóteles — 2 Reinos</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_aristoteles.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">Siglo IV a.C.</div>
+            <h4>Aristóteles — 2 Reinos</h4>
+          </div>
+        </div>
         <p>El filósofo griego dividió a los seres vivos en dos grandes grupos: aquellos con "alma vegetativa" (plantas) y los de "alma sensitiva" (animales).</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1735</div>
-        <h4>Carlos Linneo — 2 Reinos</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_linneo.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1735</div>
+            <h4>Carlos Linneo — 2 Reinos</h4>
+          </div>
+        </div>
         <p>Este naturalista sueco formalizó la idea de Aristóteles estableciendo oficialmente los reinos Animalia y Plantae con nombres científicos.</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1858-1865</div>
-        <h4>Owen & Haeckel — 3 Reinos</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_haeckel.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1858-1865</div>
+            <h4>Owen & Haeckel — 3 Reinos</h4>
+          </div>
+        </div>
         <p>Richard Owen propuso el reino Protista. Ernst Haeckel diferenció por primera vez a los organismos unicelulares de los pluricelulares.</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1938</div>
-        <h4>Copeland — 4 Reinos</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_copeland.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1938</div>
+            <h4>Copeland — 4 Reinos</h4>
+          </div>
+        </div>
         <p>Herbert Copeland introdujo la separación clave entre procariotas y eucariotas, añadiendo el reino Monera (bacterias sin núcleo).</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content">
-        <div class="timeline-year">1969</div>
-        <h4>Whittaker — 5 Reinos</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_whittaker.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1969</div>
+            <h4>Whittaker — 5 Reinos</h4>
+          </div>
+        </div>
         <p>Robert Whittaker separó definitivamente a los hongos (Fungi) de las plantas y animales: Moneras, Protistas, Fungi, Plantae y Animalia.</p>
       </div>
       <div class="timeline-dot"></div>

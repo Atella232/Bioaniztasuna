@@ -1177,6 +1177,24 @@ body {
   line-height: 1.6;
 }
 
+.timeline-header-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.timeline-portrait {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  background: rgba(255,255,255,0.05); /* Placeholder background */
+  flex-shrink: 0;
+}
+
+
 /* ===== FOOTER ===== */
 .footer {
   text-align: center;
@@ -1701,40 +1719,65 @@ body {
   <div class="timeline reveal">
     <div class="timeline-item">
       <div class="timeline-content" dir="rtl">
-        <div class="timeline-year">القرن 4 ق.م</div>
-        <h4>أرسطو — مملكتان</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_aristoteles.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">القرن 4 ق.م</div>
+            <h4>أرسطو — مملكتان</h4>
+          </div>
+        </div>
         <p>قسّم الفيلسوف اليوناني الكائنات الحية إلى مجموعتين رئيسيتين: الكائنات ذات "الروح النباتية" (النباتات) وذات "الروح الحساسة" (الحيوانات).</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content" dir="rtl">
-        <div class="timeline-year">1735</div>
-        <h4>كارل لينيوس — مملكتان</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_linneo.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1735</div>
+            <h4>كارل لينيوس — مملكتان</h4>
+          </div>
+        </div>
         <p>رسّم هذا العالم النباتي السويدي فكرة أرسطو بتأسيس مملكتي الحيوان والنبات بشكل رسمي باستخدام أسماء علمية.</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content" dir="rtl">
-        <div class="timeline-year">1858-1865</div>
-        <h4>أوين وهيكل — 3 ممالك</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_haeckel.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1858-1865</div>
+            <h4>أوين وهيكل — 3 ممالك</h4>
+          </div>
+        </div>
         <p>اقترح ريتشارد أوين مملكة الطلائعيات. ومَيَّز إرنست هيكل لأول مرة بين الكائنات وحيدة الخلية والكائنات متعددة الخلايا.</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content" dir="rtl">
-        <div class="timeline-year">1938</div>
-        <h4>كوبلاند — 4 ممالك</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_copeland.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1938</div>
+            <h4>كوبلاند — 4 ممالك</h4>
+          </div>
+        </div>
         <p>أدخل هربرت كوبلاند الفصل الرئيسي بين بدائيات النواة وحقيقيات النواة، مضيفاً مملكة البدائيات (البكتيريا بدون نواة).</p>
       </div>
       <div class="timeline-dot"></div>
     </div>
     <div class="timeline-item">
       <div class="timeline-content" dir="rtl">
-        <div class="timeline-year">1969</div>
-        <h4>ويتاكر — 5 ممالك</h4>
+        <div class="timeline-header-flex">
+          <img src="img/hist_whittaker.png" class="timeline-portrait" alt="">
+          <div>
+            <div class="timeline-year">1969</div>
+            <h4>ويتاكر — 5 ممالك</h4>
+          </div>
+        </div>
         <p>فصل روبرت ويتاكر بشكل نهائي الفطريات عن النباتات والحيوانات: البدائيات، الطلائعيات، الفطريات، النباتات والحيوانات.</p>
       </div>
       <div class="timeline-dot"></div>
