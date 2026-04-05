@@ -1496,6 +1496,98 @@ body {
   font-size: 1.5rem; opacity: 0.3;
 }
 
+
+/* ===== THREAT MAP ===== */
+.threat-map-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 3rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.threat-map-bg {
+  width: 100%;
+  display: block;
+  opacity: 0.7;
+}
+.threat-hotspot {
+  position: absolute;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+}
+.threat-hotspot::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: hotspot-pulse 2s infinite;
+  box-shadow: 0 0 10px rgba(239,68,68,0.6);
+}
+.threat-hotspot::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 6px; height: 6px;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  background: #fff;
+  z-index: 6;
+}
+@keyframes hotspot-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.8); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.threat-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(10, 26, 15, 0.95);
+  border: 1px solid var(--accent-green);
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+}
+.threat-tooltip strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--accent-green);
+  margin-bottom: 0.3rem;
+}
+.threat-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--accent-green);
+}
+.threat-hotspot:hover .threat-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+@media (max-width: 600px) {
+  .threat-tooltip { width: 150px; font-size: 0.7rem; padding: 0.6rem 0.8rem; }
+}
+
 </style>
 </head>
 <body>
@@ -2243,6 +2335,30 @@ body {
       <h4>Sobreexplotación</h4>
       <p>La caza excesiva, la pesca abusiva y la tala sin control provocan el declive y desaparición de muchas especies.</p>
     </div>
+  </div>
+
+
+  <h3 class="reveal" style="font-family: 'Playfair Display', serif; font-size: 1.5rem; text-align: center; margin: 3rem 0 1rem;">🌍 Mapa Global de Amenazas</h3>
+  <div class="threat-map-container reveal">
+    <img src="img/threat_map.png" class="threat-map-bg" alt="World Map">
+      <div class="threat-hotspot" style="top: 55%; left: 28%;">
+        <div class="threat-tooltip"><strong>Amazonía</strong>La deforestación masiva destruye el pulmón verde del planeta.</div>
+      </div>
+      <div class="threat-hotspot" style="top: 42%; left: 82%;">
+        <div class="threat-tooltip"><strong>Océano Pacífico</strong>Islas gigantes de plástico amenazan la biodiversidad marina.</div>
+      </div>
+      <div class="threat-hotspot" style="top: 55%; left: 52%;">
+        <div class="threat-tooltip"><strong>África Central</strong>Gorilas y chimpancés sufren una pérdida de hábitat devastadora.</div>
+      </div>
+      <div class="threat-hotspot" style="top: 50%; left: 75%;">
+        <div class="threat-tooltip"><strong>Sudeste Asiático</strong>El aceite de palma y la deforestación ponen en peligro a los orangutanes.</div>
+      </div>
+      <div class="threat-hotspot" style="top: 12%; left: 50%;">
+        <div class="threat-tooltip"><strong>Ártico</strong>El deshielo polar amenaza la supervivencia del oso polar.</div>
+      </div>
+      <div class="threat-hotspot" style="top: 72%; left: 82%;">
+        <div class="threat-tooltip"><strong>Australia</strong>Incendios devastadores ponen en peligro a los koalas y marsupiales.</div>
+      </div>
   </div>
 
   <!-- Concepts -->
