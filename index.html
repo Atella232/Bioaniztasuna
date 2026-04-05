@@ -1239,7 +1239,10 @@ body {
 @media (max-width: 768px) {
   .threat-card { flex: 1 1 100%; max-width: 100%; }
   .invasive-card { flex: 1 1 100%; max-width: 100%; }
-  .flashcard { flex: 1 1 100%; max-width: 100%; }
+  .flashcard { flex: 1 1 100% !important; max-width: 100% !important; height: 200px; }
+  .flashcard-front { font-size: 0.95rem; padding: 1.5rem; }
+  .flashcard-back { font-size: 1.3rem; }
+  .flashcard-front::before { font-size: 5rem; }
 
   .kingdom-card { flex: 1 1 100%; max-width: 100%; }
 
