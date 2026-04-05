@@ -1415,9 +1415,40 @@ body {
   color: #000;
 }
 
+
+/* ===== PRE-LOADER BIOLÓGICO ===== */
+#bio-loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: var(--bg-dark);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+.bio-pulse {
+  width: 60px; height: 60px;
+  background-color: var(--accent-green);
+  border-radius: 50%;
+  animation: bio-pulse-anim 1.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 30px rgba(74, 222, 128, 0.8);
+}
+@keyframes bio-pulse-anim {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
 </style>
 </head>
 <body>
+  <!-- Preloader -->
+  <div id="bio-loader">
+    <div class="bio-pulse"></div>
+  </div>
+
+
 
 <!-- PARTICLES BACKGROUND -->
 <canvas id="particles-bg"></canvas>
@@ -2550,5 +2581,15 @@ startQuiz();
     <span class="image-modal-close" onclick="closeImageModal()">&times;</span>
     <img id="imageModalImg" class="image-modal-content" src="" alt="Modal Image">
   </div>
+<script>
+  // Bio-loader
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('bio-loader');
+    if (loader) {
+      loader.style.opacity = '0';
+      setTimeout(() => { loader.style.visibility = 'hidden'; }, 800);
+    }
+  });
+</script>
 </body>
 </html>
