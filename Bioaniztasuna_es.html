@@ -917,12 +917,15 @@ body {
 
 /* ===== INVASIVE SPECIES ===== */
 .invasive-showcase {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
 
 .invasive-card {
+  flex: 1 1 350px;
+  max-width: calc(50% - 1.5rem);
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 20px;
@@ -1235,6 +1238,7 @@ body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .threat-card { flex: 1 1 100%; max-width: 100%; }
+  .invasive-card { flex: 1 1 100%; max-width: 100%; }
 
   .kingdom-card { flex: 1 1 100%; max-width: 100%; }
 
