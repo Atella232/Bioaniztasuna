@@ -1456,7 +1456,7 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
-  max-width: 1000px;
+  max-width: 1100px;
   margin-left: auto; margin-right: auto;
 }
 .flashcard {
@@ -1472,32 +1472,64 @@ body {
   transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
 }
-.flashcard:hover .flashcard-inner {
+.flashcard:hover .flashcard-inner,
+.flashcard.flipped .flashcard-inner {
   transform: rotateY(180deg);
 }
 .flashcard-front, .flashcard-back {
   position: absolute;
   width: 100%; height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 16px;
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
   border: 1px solid var(--border-subtle);
+  overflow: hidden;
 }
 .flashcard-front {
-  background: var(--bg-card-hover);
+  background:
+    url('img/bg_org_levels.png') center/cover,
+    linear-gradient(135deg, #0a1a0f 0%, #0d2016 100%);
+  background-blend-mode: multiply;
   color: var(--text-light);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 500;
+  line-height: 1.5;
+}
+.flashcard-front::before {
+  content: '?';
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  font-size: 8rem;
+  font-family: 'Playfair Display', serif;
+  color: rgba(74,222,128,0.06);
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+}
+.flashcard-front::after {
+  content: '↻';
+  position: absolute; bottom: 1rem; right: 1.5rem;
+  font-size: 1.3rem; opacity: 0.25;
 }
 .flashcard-back {
-  background: linear-gradient(135deg, rgba(74,222,128,0.1), rgba(10,26,15,0.9));
+  background: linear-gradient(135deg, rgba(15,40,20,0.97) 0%, rgba(10,26,15,1) 100%);
+  border: 1px solid rgba(74,222,128,0.4);
   transform: rotateY(180deg);
-  border-color: var(--accent-green);
   color: var(--accent-green);
   font-size: 1.6rem;
   font-family: 'Playfair Display', serif;
+  box-shadow: 0 0 30px rgba(74,222,128,0.15), 0 10px 30px rgba(0,0,0,0.5);
+}
+.flashcard-back::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(ellipse at center, rgba(74,222,128,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 .flashcard-front::after {
   content: '↻';
@@ -2497,6 +2529,18 @@ body {
           <div class="flashcard-back"><i>Homo sapiens</i></div>
         </div>
       </div>
+          <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">¿En qué reino se clasifican las setas y los hongos?</div>
+          <div class="flashcard-back">Reino Fungi</div>
+        </div>
+      </div>
+      <div class="flashcard">
+        <div class="flashcard-inner">
+          <div class="flashcard-front">¿Cómo se llama el conjunto de características de un individuo?</div>
+          <div class="flashcard-back">Fenotipo</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -2812,6 +2856,12 @@ startQuiz();
     <img id="imageModalImg" class="image-modal-content" src="" alt="Modal Image">
   </div>
 <script>
+  
+  // Flashcard touch support
+  document.querySelectorAll('.flashcard').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('flipped'));
+  });
+
   // Bio-loader
   window.addEventListener('load', () => {
     const loader = document.getElementById('bio-loader');
