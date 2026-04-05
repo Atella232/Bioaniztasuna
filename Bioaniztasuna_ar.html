@@ -1632,6 +1632,29 @@ body {
   transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
+/* Tooltips at edges: flip direction */
+.threat-hotspot.tooltip-right .threat-tooltip {
+  left: 0;
+  transform: translateX(0) translateY(10px);
+}
+.threat-hotspot.tooltip-right:hover .threat-tooltip {
+  transform: translateX(0) translateY(0);
+}
+.threat-hotspot.tooltip-left .threat-tooltip {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(10px);
+}
+.threat-hotspot.tooltip-left:hover .threat-tooltip {
+  transform: translateX(0) translateY(0);
+}
+.threat-hotspot.tooltip-left .threat-tooltip::after {
+  left: auto;
+  right: 10px;
+}
+.threat-hotspot.tooltip-right .threat-tooltip::after {
+  left: 10px;
+}
 @media (max-width: 600px) {
   .threat-tooltip { width: 150px; font-size: 0.7rem; padding: 0.6rem 0.8rem; }
 }
