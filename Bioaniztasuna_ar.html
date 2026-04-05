@@ -1368,6 +1368,17 @@ body {
   .bridge-half.right { max-width: calc(50% - 0.5rem); }
 }
 
+
+.org-icon-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin-bottom: 0.2rem;
+}
+
 </style>
 </head>
 <body>
@@ -1769,15 +1780,15 @@ body {
       
       <div class="org-definitions">
         <div class="org-def">
-          <h4><span class="icon">🧬</span> الأنسجة</h4>
+          <h4> الأنسجة</h4>
           <p>مجموعات من الخلايا المتشابهة التي تؤدي نفس الوظيفة. مثل النسيج العضلي.</p>
         </div>
         <div class="org-def">
-          <h4><span class="icon">❤️</span> الأعضاء</h4>
+          <h4> الأعضاء</h4>
           <p>هياكل تتكون من عدة أنسجة تؤدي وظيفة معينة. مثل العظم.</p>
         </div>
         <div class="org-def">
-          <h4><span class="icon">⚙️</span> الأجهزة والأنظمة</h4>
+          <h4> الأجهزة والأنظمة</h4>
           <p>مجموعات من الأعضاء تعمل بشكل متناسق لأداء وظيفة حيوية.</p>
         </div>
       </div>
@@ -1786,23 +1797,23 @@ body {
         <div class="org-branches">
           <!-- Columna Izquierda -->
           <div class="org-branch">
-            <div class="org-node"><div class="icon">🔬</div>خلية عظمية</div>
+            <div class="org-node"><img src="img/org_bone_cell.png" class="org-icon-img">خلية عظمية</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🦴</div>نسيج عظمي</div>
+            <div class="org-node"><img src="img/org_bone_tissue.png" class="org-icon-img">نسيج عظمي</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><div class="icon">🦴</div>عظم</div>
+            <div class="org-node highlight"><img src="img/org_bone_organ.png" class="org-icon-img">عظم</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">💀</div>هيكل عظمي</div>
+            <div class="org-node"><img src="img/org_skeleton_system.png" class="org-icon-img">هيكل عظمي</div>
           </div>
           <!-- Columna Derecha -->
           <div class="org-branch">
-            <div class="org-node"><div class="icon">🔬</div>خلية عضلية</div>
+            <div class="org-node"><img src="img/org_muscle_cell.png" class="org-icon-img">خلية عضلية</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🥩</div>نسيج عضلي</div>
+            <div class="org-node"><img src="img/org_muscle_tissue.png" class="org-icon-img">نسيج عضلي</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><div class="icon">💪</div>عضلة</div>
+            <div class="org-node highlight"><img src="img/org_muscle_organ.png" class="org-icon-img">عضلة</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🏃</div>جهاز عضلي</div>
+            <div class="org-node"><img src="img/org_muscle_system.png" class="org-icon-img">جهاز عضلي</div>
           </div>
         </div>
         
@@ -1812,9 +1823,9 @@ body {
         </div>
         
         <div style="display:flex; flex-direction: column; align-items: center; width: 100%;">
-          <div class="org-node final" style="margin-top:-2px; z-index:2;"><div class="icon">🤸</div>الجهاز الحركي</div>
+          <div class="org-node final" style="margin-top:-2px; z-index:2;"><img src="img/org_locomotion.png" class="org-icon-img">الجهاز الحركي</div>
           <div class="org-arrow"></div>
-          <div class="org-node human"><div class="icon">🧍</div>الإنسان</div>
+          <div class="org-node human"><img src="img/org_locomotion.png" class="org-icon-img">الإنسان</div>
         </div>
 
       </div>

@@ -1368,6 +1368,17 @@ body {
   .bridge-half.right { max-width: calc(50% - 0.5rem); }
 }
 
+
+.org-icon-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin-bottom: 0.2rem;
+}
+
 </style>
 </head>
 <body>
@@ -1769,15 +1780,15 @@ body {
       
       <div class="org-definitions">
         <div class="org-def">
-          <h4><span class="icon">🧬</span> Tejidos</h4>
+          <h4> Tejidos</h4>
           <p>Conjunto de células similares que realizan la misma actividad. Por ejemplo, tejido muscular.</p>
         </div>
         <div class="org-def">
-          <h4><span class="icon">❤️</span> Órganos</h4>
+          <h4> Órganos</h4>
           <p>Estructuras formadas por varios tejidos que cumplen una función concreta. Por ejemplo, un hueso.</p>
         </div>
         <div class="org-def">
-          <h4><span class="icon">⚙️</span> Sistemas y Aparatos</h4>
+          <h4> Sistemas y Aparatos</h4>
           <p>Grupos de órganos que trabajan de manera coordinada para cumplir funciones vitales.</p>
         </div>
       </div>
@@ -1786,23 +1797,23 @@ body {
         <div class="org-branches">
           <!-- Columna Izquierda -->
           <div class="org-branch">
-            <div class="org-node"><div class="icon">🔬</div>Célula ósea</div>
+            <div class="org-node"><img src="img/org_bone_cell.png" class="org-icon-img">Célula ósea</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🦴</div>Tejido óseo</div>
+            <div class="org-node"><img src="img/org_bone_tissue.png" class="org-icon-img">Tejido óseo</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><div class="icon">🦴</div>Hueso</div>
+            <div class="org-node highlight"><img src="img/org_bone_organ.png" class="org-icon-img">Hueso</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">💀</div>Sistema óseo</div>
+            <div class="org-node"><img src="img/org_skeleton_system.png" class="org-icon-img">Sistema óseo</div>
           </div>
           <!-- Columna Derecha -->
           <div class="org-branch">
-            <div class="org-node"><div class="icon">🔬</div>Célula muscular</div>
+            <div class="org-node"><img src="img/org_muscle_cell.png" class="org-icon-img">Célula muscular</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🥩</div>Tejido muscular</div>
+            <div class="org-node"><img src="img/org_muscle_tissue.png" class="org-icon-img">Tejido muscular</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><div class="icon">💪</div>Músculo</div>
+            <div class="org-node highlight"><img src="img/org_muscle_organ.png" class="org-icon-img">Músculo</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🏃</div>Sistema muscular</div>
+            <div class="org-node"><img src="img/org_muscle_system.png" class="org-icon-img">Sistema muscular</div>
           </div>
         </div>
         
@@ -1812,9 +1823,9 @@ body {
         </div>
         
         <div style="display:flex; flex-direction: column; align-items: center; width: 100%;">
-          <div class="org-node final" style="margin-top:-2px; z-index:2;"><div class="icon">🤸</div>Aparato Locomotor</div>
+          <div class="org-node final" style="margin-top:-2px; z-index:2;"><img src="img/org_locomotion.png" class="org-icon-img">Aparato Locomotor</div>
           <div class="org-arrow"></div>
-          <div class="org-node human"><div class="icon">🧍</div>Humano</div>
+          <div class="org-node human"><img src="img/org_locomotion.png" class="org-icon-img">Humano</div>
         </div>
 
       </div>

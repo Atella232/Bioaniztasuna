@@ -1368,6 +1368,17 @@ body {
   .bridge-half.right { max-width: calc(50% - 0.5rem); }
 }
 
+
+.org-icon-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin-bottom: 0.2rem;
+}
+
 </style>
 </head>
 <body>
@@ -1769,15 +1780,15 @@ body {
       
       <div class="org-definitions">
         <div class="org-def">
-          <h4><span class="icon">🧬</span> Ehunak</h4>
+          <h4> Ehunak</h4>
           <p>Jarduera bera garatzen duten antzeko zelulen multzoak. Adibidez, muskulu-ehuna.</p>
         </div>
         <div class="org-def">
-          <h4><span class="icon">❤️</span> Organoak</h4>
+          <h4> Organoak</h4>
           <p>Funtzio jakin bat betetzen duten zenbait ehunek eratutako egiturak. Adibidez, hezurra.</p>
         </div>
         <div class="org-def">
-          <h4><span class="icon">⚙️</span> Sistemak eta Aparatuak</h4>
+          <h4> Sistemak eta Aparatuak</h4>
           <p>Koordinatuta lan egiten duten organoen multzoak dira (Sistema edo aparatu bat osatuz).</p>
         </div>
       </div>
@@ -1786,23 +1797,23 @@ body {
         <div class="org-branches">
           <!-- Columna Izquierda -->
           <div class="org-branch">
-            <div class="org-node"><div class="icon">🔬</div>Hezur-zelula</div>
+            <div class="org-node"><img src="img/org_bone_cell.png" class="org-icon-img">Hezur-zelula</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🦴</div>Hezur-ehuna</div>
+            <div class="org-node"><img src="img/org_bone_tissue.png" class="org-icon-img">Hezur-ehuna</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><div class="icon">🦴</div>Hezurra</div>
+            <div class="org-node highlight"><img src="img/org_bone_organ.png" class="org-icon-img">Hezurra</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">💀</div>Hezur-sistema</div>
+            <div class="org-node"><img src="img/org_skeleton_system.png" class="org-icon-img">Hezur-sistema</div>
           </div>
           <!-- Columna Derecha -->
           <div class="org-branch">
-            <div class="org-node"><div class="icon">🔬</div>Muskulu-zelula</div>
+            <div class="org-node"><img src="img/org_muscle_cell.png" class="org-icon-img">Muskulu-zelula</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🥩</div>Muskulu-ehuna</div>
+            <div class="org-node"><img src="img/org_muscle_tissue.png" class="org-icon-img">Muskulu-ehuna</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><div class="icon">💪</div>Muskulua</div>
+            <div class="org-node highlight"><img src="img/org_muscle_organ.png" class="org-icon-img">Muskulua</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><div class="icon">🏃</div>Muskulu-sistema</div>
+            <div class="org-node"><img src="img/org_muscle_system.png" class="org-icon-img">Muskulu-sistema</div>
           </div>
         </div>
         
@@ -1812,9 +1823,9 @@ body {
         </div>
         
         <div style="display:flex; flex-direction: column; align-items: center; width: 100%;">
-          <div class="org-node final" style="margin-top:-2px; z-index:2;"><div class="icon">🤸</div>Lokomozio-aparatua</div>
+          <div class="org-node final" style="margin-top:-2px; z-index:2;"><img src="img/org_locomotion.png" class="org-icon-img">Lokomozio-aparatua</div>
           <div class="org-arrow"></div>
-          <div class="org-node human"><div class="icon">🧍</div>Gizakia</div>
+          <div class="org-node human"><img src="img/org_locomotion.png" class="org-icon-img">Gizakia</div>
         </div>
 
       </div>
