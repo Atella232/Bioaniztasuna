@@ -853,12 +853,15 @@ body {
 }
 
 .threats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.2rem;
 }
 
 .threat-card {
+  flex: 1 1 300px;
+  max-width: calc(33.333% - 1.2rem);
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
@@ -1231,6 +1234,8 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .threat-card { flex: 1 1 100%; max-width: 100%; }
+
   .kingdom-card { flex: 1 1 100%; max-width: 100%; }
 
   .nav-links { display: none; }
