@@ -724,12 +724,15 @@ body {
 
 /* ===== KINGDOMS ===== */
 .kingdoms-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1.2rem;
 }
 
 .kingdom-card {
+  flex: 1 1 300px;
+  max-width: calc(33.333% - 1.2rem);
   position: relative;
   border-radius: 24px;
   border: 1px solid var(--border-subtle);
