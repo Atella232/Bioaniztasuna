@@ -1283,6 +1283,91 @@ body {
   transition: color 0.3s;
 }
 .image-modal-close:hover { color: var(--accent-rose); }
+
+/* ===== ORG LEVELS (NEW COMPLEX DESIGN) ===== */
+.org-container {
+  position: relative;
+  padding: 4rem 2rem;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  margin-top: 4rem;
+  color: white;
+}
+.org-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(10,26,15,0.9), rgba(10,26,15,0.95)), url('img/bg_org_levels.png') center/cover;
+  z-index: 0;
+  opacity: 0.8;
+}
+.org-bg::after {
+  content: ''; position: absolute; top:0; left:0; width:100%; height:100%;
+  background: radial-gradient(circle at center, transparent, #050a06);
+}
+.org-content-wrapper {
+  position: relative; z-index: 1;
+}
+.org-title {
+  font-family: 'Playfair Display', serif; 
+  font-size: 2rem; text-align: center; margin-bottom: 3rem; color: #fff;
+}
+.org-definitions {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;
+  margin-bottom: 4rem; max-width: 900px; margin-left: auto; margin-right: auto;
+}
+.org-def {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+  padding: 1.5rem; border-radius: 16px; backdrop-filter: blur(10px);
+  transition: all 0.3s;
+}
+.org-def:hover { background: rgba(255,255,255,0.08); border-color: rgba(74,222,128,0.4); transform: translateY(-3px); }
+.org-def h4 { color: var(--accent-green); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;}
+.org-def p { font-size: 0.85rem; color: #aaa; line-height: 1.6; }
+
+.org-diagram {
+  display: flex; flex-direction: column; align-items: center; width: 100%;
+}
+.org-branches {
+  display: flex; gap: 4rem; justify-content: center; width: 100%; max-width: 600px;
+}
+.org-branch {
+  display: flex; flex-direction: column; align-items: center; flex: 1;
+}
+.org-node {
+  background: rgba(10,26,15,0.9); border: 1px solid rgba(74,222,128,0.3);
+  padding: 1rem 0.5rem; border-radius: 12px; width: 100%; max-width: 200px; text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); font-weight: 500; font-size: 0.85rem;
+  transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+}
+.org-node .icon { font-size: 1.5rem; }
+.org-node:hover { transform: scale(1.05); background: rgba(74,222,128,0.1); border-color: var(--accent-green); }
+.org-node.highlight { background: rgba(74,222,128,0.15); border: 2px solid var(--accent-green); font-size: 0.95rem; font-weight: 700;}
+.org-node.final { background: linear-gradient(135deg, rgba(74,222,128,0.2), rgba(34,211,238,0.2)); border: 2px solid var(--accent-cyan); font-size: 1rem; font-weight: 700; max-width: 250px;}
+.org-node.human { background: linear-gradient(135deg, var(--accent-green), var(--accent-teal)); color: #000; border: none; font-size: 1.1rem; font-weight: 800;}
+
+.org-arrow {
+  height: 25px; width: 2px; background: rgba(74,222,128,0.5);
+  position: relative;
+}
+.org-arrow::after {
+  content:''; position:absolute; bottom:0; left:-4px;
+  width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid rgba(74,222,128,0.5);
+}
+
+.bridge-container { display: flex; justify-content: center; height: 40px; width: 100%; max-width: 600px; }
+.bridge-half { flex: 1; border-bottom: 2px solid rgba(74,222,128,0.5); position: relative; }
+.bridge-half.left { border-left: 2px solid rgba(74,222,128,0.5); border-bottom-left-radius: 16px; margin-left: auto; max-width: calc(50% - 2rem); }
+.bridge-half.right { border-right: 2px solid rgba(74,222,128,0.5); border-bottom-right-radius: 16px; margin-right: auto; max-width: calc(50% - 2rem); }
+
+@media (max-width: 600px) {
+  .org-branches { gap: 1rem; }
+  .org-node { padding: 0.8rem 0.2rem; font-size: 0.75rem; }
+  .org-node .icon { font-size: 1.2rem; }
+  .bridge-half.left { max-width: calc(50% - 0.5rem); }
+  .bridge-half.right { max-width: calc(50% - 0.5rem); }
+}
+
 </style>
 </head>
 <body>
@@ -1677,32 +1762,61 @@ body {
   </div>
 
   <!-- Organization levels -->
-  <div class="reveal" style="margin-top: 3rem;">
-    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; text-align: center; margin-bottom: 2rem;">Sistema de Niveles de Organización</h3>
-    <div style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; align-items: center;">
-      <div style="text-align:center; padding: 1.2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); min-width: 110px;">
-        <div style="font-size: 1.5rem;">🔬</div>
-        <div style="font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem;">Célula</div>
+  <div class="org-container reveal">
+    <div class="org-bg"></div>
+    <div class="org-content-wrapper">
+      <h3 class="org-title">Niveles de Organización Celular</h3>
+      
+      <div class="org-definitions">
+        <div class="org-def">
+          <h4><span class="icon">🧬</span> Tejidos</h4>
+          <p>Conjunto de células similares que realizan la misma actividad. Por ejemplo, tejido muscular.</p>
+        </div>
+        <div class="org-def">
+          <h4><span class="icon">❤️</span> Órganos</h4>
+          <p>Estructuras formadas por varios tejidos que cumplen una función concreta. Por ejemplo, un hueso.</p>
+        </div>
+        <div class="org-def">
+          <h4><span class="icon">⚙️</span> Sistemas y Aparatos</h4>
+          <p>Grupos de órganos que trabajan de manera coordinada para cumplir funciones vitales.</p>
+        </div>
       </div>
-      <div style="color: var(--accent-green); font-size: 1.5rem;">→</div>
-      <div style="text-align:center; padding: 1.2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); min-width: 110px;">
-        <div style="font-size: 1.5rem;">🧵</div>
-        <div style="font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem;">Tejido</div>
-      </div>
-      <div style="color: var(--accent-green); font-size: 1.5rem;">→</div>
-      <div style="text-align:center; padding: 1.2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); min-width: 110px;">
-        <div style="font-size: 1.5rem;">❤️</div>
-        <div style="font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem;">Órgano</div>
-      </div>
-      <div style="color: var(--accent-green); font-size: 1.5rem;">→</div>
-      <div style="text-align:center; padding: 1.2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); min-width: 110px;">
-        <div style="font-size: 1.5rem;">🫁</div>
-        <div style="font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem;">Sistema / Aparato</div>
-      </div>
-      <div style="color: var(--accent-green); font-size: 1.5rem;">→</div>
-      <div style="text-align:center; padding: 1.2rem; background: var(--bg-card); border-radius: 16px; border: 1px solid var(--border-subtle); min-width: 110px;">
-        <div style="font-size: 1.5rem;">🧍</div>
-        <div style="font-size: 0.8rem; font-weight: 600; margin-top: 0.3rem;">Organismo</div>
+
+      <div class="org-diagram">
+        <div class="org-branches">
+          <!-- Columna Izquierda -->
+          <div class="org-branch">
+            <div class="org-node"><div class="icon">🔬</div>Célula ósea</div>
+            <div class="org-arrow"></div>
+            <div class="org-node"><div class="icon">🦴</div>Tejido óseo</div>
+            <div class="org-arrow"></div>
+            <div class="org-node highlight"><div class="icon">🦴</div>Hueso</div>
+            <div class="org-arrow"></div>
+            <div class="org-node"><div class="icon">💀</div>Sistema óseo</div>
+          </div>
+          <!-- Columna Derecha -->
+          <div class="org-branch">
+            <div class="org-node"><div class="icon">🔬</div>Célula muscular</div>
+            <div class="org-arrow"></div>
+            <div class="org-node"><div class="icon">🥩</div>Tejido muscular</div>
+            <div class="org-arrow"></div>
+            <div class="org-node highlight"><div class="icon">💪</div>Músculo</div>
+            <div class="org-arrow"></div>
+            <div class="org-node"><div class="icon">🏃</div>Sistema muscular</div>
+          </div>
+        </div>
+        
+        <div class="bridge-container">
+          <div class="bridge-half left"></div>
+          <div class="bridge-half right"></div>
+        </div>
+        
+        <div style="display:flex; flex-direction: column; align-items: center; width: 100%;">
+          <div class="org-node final" style="margin-top:-2px; z-index:2;"><div class="icon">🤸</div>Aparato Locomotor</div>
+          <div class="org-arrow"></div>
+          <div class="org-node human"><div class="icon">🧍</div>Humano</div>
+        </div>
+
       </div>
     </div>
   </div>
