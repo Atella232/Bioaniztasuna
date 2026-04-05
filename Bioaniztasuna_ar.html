@@ -1369,14 +1369,48 @@ body {
 }
 
 
-.org-icon-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid var(--accent-green);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  margin-bottom: 0.2rem;
+
+
+
+/* ===== ORG NODES CINEMATIC CARDS ===== */
+.org-node {
+  background: var(--bg-card);
+  border: 1px solid rgba(74,222,128,0.3);
+  padding: 0;
+  border-radius: 16px;
+  width: 100%; max-width: 220px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.3s;
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+  gap: 0 !important;
+}
+.org-node-visual {
+  width: 100%;
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid rgba(74,222,128,0.2);
+}
+.org-node-body {
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.org-node.highlight .org-node-body {
+  font-size: 1rem;
+  color: var(--accent-green);
+}
+.org-node.final .org-node-body {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.org-node.human .org-node-body {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #000;
 }
 
 </style>
@@ -1797,23 +1831,47 @@ body {
         <div class="org-branches">
           <!-- Columna Izquierda -->
           <div class="org-branch">
-            <div class="org-node"><img src="img/org_bone_cell.png" class="org-icon-img">خلية عظمية</div>
+            <div class="org-node">
+  <div class="org-node-visual" style="background-image: url('img/org_bone_cell.png');"></div>
+  <div class="org-node-body">خلية عظمية</div>
+</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><img src="img/org_bone_tissue.png" class="org-icon-img">نسيج عظمي</div>
+            <div class="org-node">
+  <div class="org-node-visual" style="background-image: url('img/org_bone_tissue.png');"></div>
+  <div class="org-node-body">نسيج عظمي</div>
+</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><img src="img/org_bone_organ.png" class="org-icon-img">عظم</div>
+            <div class="org-node highlight">
+  <div class="org-node-visual" style="background-image: url('img/org_bone_organ.png');"></div>
+  <div class="org-node-body">عظم</div>
+</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><img src="img/org_skeleton_system.png" class="org-icon-img">هيكل عظمي</div>
+            <div class="org-node">
+  <div class="org-node-visual" style="background-image: url('img/org_skeleton_system.png');"></div>
+  <div class="org-node-body">هيكل عظمي</div>
+</div>
           </div>
           <!-- Columna Derecha -->
           <div class="org-branch">
-            <div class="org-node"><img src="img/org_muscle_cell.png" class="org-icon-img">خلية عضلية</div>
+            <div class="org-node">
+  <div class="org-node-visual" style="background-image: url('img/org_muscle_cell.png');"></div>
+  <div class="org-node-body">خلية عضلية</div>
+</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><img src="img/org_muscle_tissue.png" class="org-icon-img">نسيج عضلي</div>
+            <div class="org-node">
+  <div class="org-node-visual" style="background-image: url('img/org_muscle_tissue.png');"></div>
+  <div class="org-node-body">نسيج عضلي</div>
+</div>
             <div class="org-arrow"></div>
-            <div class="org-node highlight"><img src="img/org_muscle_organ.png" class="org-icon-img">عضلة</div>
+            <div class="org-node highlight">
+  <div class="org-node-visual" style="background-image: url('img/org_muscle_organ.png');"></div>
+  <div class="org-node-body">عضلة</div>
+</div>
             <div class="org-arrow"></div>
-            <div class="org-node"><img src="img/org_muscle_system.png" class="org-icon-img">جهاز عضلي</div>
+            <div class="org-node">
+  <div class="org-node-visual" style="background-image: url('img/org_muscle_system.png');"></div>
+  <div class="org-node-body">جهاز عضلي</div>
+</div>
           </div>
         </div>
         
@@ -1825,7 +1883,10 @@ body {
         <div style="display:flex; flex-direction: column; align-items: center; width: 100%;">
           <div class="org-node final" style="margin-top:-2px; z-index:2;"><img src="img/org_locomotion.png" class="org-icon-img">الجهاز الحركي</div>
           <div class="org-arrow"></div>
-          <div class="org-node human"><img src="img/org_locomotion.png" class="org-icon-img">الإنسان</div>
+          <div class="org-node human">
+  <div class="org-node-visual" style="background-image: url('img/org_locomotion.png');"></div>
+  <div class="org-node-body">الإنسان</div>
+</div>
         </div>
 
       </div>
